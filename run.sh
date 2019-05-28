@@ -4,7 +4,7 @@ stty -echo
 read password
 stty echo
 
-proxy=101.51.137.102
+proxy=159.192.101.137
 
 while true ; do
     echo "Do you want custom proxy (y/n)?"
@@ -25,7 +25,7 @@ while true ; do
     if [[ $uselog == 'y' || $uselog == 'n' ]]; then
        if [[ $uselog == 'y' ]]; then
             nohup python ./examples/like_timeline_feed_eing.py zeing $password $proxy > my_output.log &
-            tail -f my_output.log
+            tail -f my_output.log --lines 1000
        else
             python ./examples/like_timeline_feed_eing.py zeing $password $proxy
        fi
