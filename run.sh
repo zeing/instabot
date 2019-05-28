@@ -1,4 +1,4 @@
-rm -f ./examples/my_output.log
+rm -f my_output.log
 echo "Password?"
 stty -echo
 read password
