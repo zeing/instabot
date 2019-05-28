@@ -5,7 +5,7 @@ read password
 stty echo
 
 while true ; do
-    echo "Do you want custom proxy (y/n)?"
+    echo "Do you want use proxy (y/n)?"
     read useproxy
     if [[ $useproxy == 'y' || $useproxy == 'n' ]]; then
        if [[ $useproxy == 'y' ]]; then
