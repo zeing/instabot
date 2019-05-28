@@ -20,7 +20,7 @@ done
 while true ; do
     echo "Do you run background (y/n)?"
     read usebg
-    if [[ usebg == 'y' || $usebg == 'n' ]]; then
+    if [[ $usebg == 'y' || $usebg == 'n' ]]; then
        if [[ $usebg == 'y' ]]; then
             if [[ $useproxy == 'y' ]]; then
               nohup python ./examples/like_timeline_feed_eing.py -u zeing -p $password -proxy $proxy > my_output.log &
