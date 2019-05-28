@@ -4,13 +4,11 @@ stty -echo
 read password
 stty echo
 
-proxy=159.192.101.137
-
 while true ; do
     echo "Do you want custom proxy (y/n)?"
-    read uselog
-    if [[ $uselog == 'y' || $uselog == 'n' ]]; then
-       if [[ $uselog == 'y' ]]; then
+    read useproxy
+    if [[ $useproxy == 'y' || $useproxy == 'n' ]]; then
+       if [[ $useproxy == 'y' ]]; then
              echo "proxy?"
              read  proxy
        fi
@@ -21,13 +19,23 @@ done
 
 while true ; do
     echo "Do you run background (y/n)?"
-    read uselog
-    if [[ $uselog == 'y' || $uselog == 'n' ]]; then
-       if [[ $uselog == 'y' ]]; then
-            nohup python ./examples/like_timeline_feed_eing.py zeing $password $proxy > my_output.log &
-            tail -f my_output.log --lines 1000
+    read usebg
+    if [[ usebg == 'y' || $usebg == 'n' ]]; then
+       if [[ $usebg == 'y' ]]; then
+            if [[ $useproxy == 'y' ]]; then
+              nohup python ./examples/like_timeline_feed_eing.py -u zeing -p $password -proxy $proxy > my_output.log &
+              tail -f my_output.log --lines 1000
+             else
+                nohup python ./examples/like_timeline_feed_eing.py -u zeing -p $password > my_output.log &
+                tail -f my_output.log --lines 1000
+            fi
+
        else
-            python ./examples/like_timeline_feed_eing.py zeing $password $proxy
+             if [[ $useproxy == 'y' ]]; then
+                python ./examples/like_timeline_feed_eing.py -u zeing -p $password -proxy $proxy
+             else
+               python ./examples/like_timeline_feed_eing.py -u zeing -p $password
+            fi
        fi
        break;
     else echo "not y or n , please input again !!";
