@@ -25,15 +25,15 @@ while true ; do
             if [[ $useproxy == 'y' ]]; then
               nohup python ./examples/like_timeline_feed_eing.py -u zeing -p $password -proxy $proxy > my_output.log &
               tail -f my_output.log --lines 1000
-             else
+            else
                 nohup python ./examples/like_timeline_feed_eing.py -u zeing -p $password > my_output.log &
                 tail -f my_output.log --lines 1000
             fi
 
        else
-             if [[ $useproxy == 'y' ]]; then
+            if [[ $useproxy == 'y' ]]; then
                 python ./examples/like_timeline_feed_eing.py -u zeing -p $password -proxy $proxy
-             else
+            else
                python ./examples/like_timeline_feed_eing.py -u zeing -p $password
             fi
        fi
