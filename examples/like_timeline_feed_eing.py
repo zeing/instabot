@@ -7,7 +7,6 @@ sys.path.append(os.path.join(sys.path[0], '../'))
 from instabot import Bot
 
 print(sys.argv[3])
-
 bot = Bot()
 bot.login(username=sys.argv[1], password=sys.argv[2], proxy=sys.argv[3])
 wait = 5 * 60 # in seconds
