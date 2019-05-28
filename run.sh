@@ -23,7 +23,7 @@ while true ; do
     read uselog
     if [[ $uselog == 'y' || $uselog == 'n' ]]; then
        if [[ $uselog == 'y' ]]; then
-            nohup python like_timeline_feed_eing.py zeing $password $proxy > my_output.log &
+            nohup python ./examples/like_timeline_feed_eing.py zeing $password $proxy > my_output.log &
             tail -f my_output.log
        else
             python ./examples/like_timeline_feed_eing.py zeing $password $proxy
