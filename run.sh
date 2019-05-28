@@ -3,7 +3,7 @@ stty -echo
 read password
 stty echo
 
-proxy=122.154.123.2
+proxy=101.51.137.102
 
 while true ; do
     echo "Do you want custom proxy (y/n)?"
@@ -17,5 +17,19 @@ while true ; do
     else echo "not y or n , please input again !!";
     fi
 done
-\python ./examples/like_timeline_feed_eing.py zeing $password $proxy
+
+while true ; do
+    echo "Do you run background (y/n)?"
+    read uselog
+    if [[ $uselog == 'y' || $uselog == 'n' ]]; then
+       if [[ $uselog == 'y' ]]; then
+             python ./examples/like_timeline_feed_eing.py zeing $password $proxy
+       else
+            python ./examples/like_timeline_feed_eing.py zeing $password $proxy
+            tail -f my_output.log
+       fi
+       break;
+    else echo "not y or n , please input again !!";
+    fi
+done
 
