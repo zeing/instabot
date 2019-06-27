@@ -298,9 +298,14 @@ class API(object):
     def auto_complete_user_list(self):
         return self.send_request('friendships/autocomplete_user_list/')
 
+    # def get_timeline_feed(self):
+    #     """ Returns 8 medias from timeline feed of logged user."""
+    #     return self.send_request('feed/timeline/')
+
     def get_timeline_feed(self):
-        """ Returns 8 medias from timeline feed of logged user."""
-        return self.send_request('feed/timeline/')
+            """ Returns 8 medias from timeline feed of logged user."""
+            data = self.json_data({'is_prefetch': '0','is_pull_to_refresh': '0'})
+            return self.send_request('feed/timeline/', data, with_signature=False)
 
     def get_megaphone_log(self):
         return self.send_request('megaphone/log/')
