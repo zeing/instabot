@@ -304,15 +304,9 @@ class API(object):
     #     return self.send_request('feed/timeline/')
 
     def get_timeline_feed(self):
-<<<<<<< HEAD
-            """ Returns 8 medias from timeline feed of logged user."""
-            data = self.json_data({'is_prefetch': '0','is_pull_to_refresh': '0'})
-            return self.send_request('feed/timeline/', data, with_signature=False)
-=======
         """ Returns 8 medias from timeline feed of logged user."""
         data = self.json_data({'is_prefetch': '0', 'is_pull_to_refresh': '0'})
         return self.send_request('feed/timeline/', data, with_signature=False)
->>>>>>> upstream/master
 
     def get_megaphone_log(self):
         return self.send_request('megaphone/log/')
