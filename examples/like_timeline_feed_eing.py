@@ -18,7 +18,7 @@ bot = Bot()
 bot.login(username=args.u, password=args.p,
           proxy=args.proxy)
 
-wait = 30 * 60 # in seconds
+wait = 15 * 60 # in seconds
 while True:
     bot.like_timeline()
     time.sleep(wait)
