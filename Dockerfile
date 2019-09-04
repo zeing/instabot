@@ -9,4 +9,4 @@ COPY . .
 
 VOLUME /app/examples/autopost/pics/
 
-CMD [ "python3", "example/multi_script_CLI.py" ]
+CMD [ "python3", "example/like_timeline_feed_eing.py" ]
