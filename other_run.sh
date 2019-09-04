@@ -1,4 +1,3 @@
-rm -f my_output.log
 echo "Username?"
 read username
 echo "Password?"
