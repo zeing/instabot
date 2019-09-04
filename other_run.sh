@@ -26,10 +26,10 @@ while true ; do
        if [[ $usebg == 'y' ]]; then
             if [[ $useproxy == 'y' ]]; then
               nohup python ./examples/like_timeline_feed_eing.py -u $username -p $password -proxy $proxy > my_output_$username.log &
-              tail -f my_output_$username.log.log --lines 1000
+              tail -f my_output_$username.log --lines 1000
             else
                 nohup python ./examples/like_timeline_feed_eing.py -u $username -p $password > my_output_$username.log &
-                tail -f my_output_$username.log.log --lines 1000
+                tail -f my_output_$username.log --lines 1000
             fi
 
        else
