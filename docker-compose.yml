@@ -16,7 +16,7 @@ services:
     environment:
       - IG_USERNAME= zeing_official
       - IG_PASSWORD= ${IG_PASSWORD}
-      - IG_PROXY= 
+      - IG_PROXY= 118.175.244.111:8080
   like_zeing:
     container_name: like_z
     build:
@@ -25,5 +25,5 @@ services:
     environment:
       - IG_USERNAME= zeing
       - IG_PASSWORD= ${IG_PASSWORD}
-      - IG_PROXY= 118.175.244.111:8080
+      - IG_PROXY= 
  
