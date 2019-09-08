@@ -23,7 +23,7 @@ USERNAME = os.getenv('IG_USERNAME')
 PASSWORD = os.getenv('IG_PASSWORD')
 print("Running with user: %s and password: %s" % (USERNAME, PASSWORD))
 bot = Bot()
-bot.login(username=USERNAME, password=PASSWORD, proxy='')
+bot.login(username=USERNAME, password=PASSWORD)
 
 if len(sys.argv) >= 2:
     bot.logger.info(
