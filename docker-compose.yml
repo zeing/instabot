@@ -23,7 +23,7 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - IG_USERNAME= zeing_official
+      - IG_USERNAME= zeing
       - IG_PASSWORD= ${IG_PASSWORD}
       - IG_PROXY= 118.175.244.111:8080
  
