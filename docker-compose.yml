@@ -1,0 +1,10 @@
+version: '3'
+services:
+  like_zeing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - IG_USERNAME= zeing
+      - IG_PASSWORD= ${IG_PASSWORD}
+ 
