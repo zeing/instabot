@@ -2,20 +2,17 @@
 import os
 import sys
 import time
-import argparse
 
 sys.path.append(os.path.join(sys.path[0], '../'))
 from instabot import Bot
 
-parser = argparse.ArgumentParser(add_help=True)
-parser.add_argument('-u', type=str, help="username")
-parser.add_argument('-p', type=str, help="password")
-parser.add_argument('-proxy', type=str, help="proxy")
-args = parser.parse_args()
-print(args);
+USERNAME = os.getenv('IG_USERNAME')
+PASSWORD = os.getenv('IG_PASSWORD')
+PROXY = os.getenv('IG_PROXY')
+print("Running with user: %s and password: %s and proxy: %s" % (USERNAME, PASSWORD,PROXY))
 bot = Bot()
-bot.login(username=args.u, password=args.p,
-          proxy=args.proxy)
+bot.login(username=USERNAME, password=PASSWORD,
+          proxy=PROXY)
 
 wait = 15 * 60 # in seconds
 while True:

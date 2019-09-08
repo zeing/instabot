@@ -1,10 +1,17 @@
 version: '3'
 services:
-  like_zeing:
+  watch_zeing_official:
+    build:
+      context: .
+      dockerfile: Dockerfile.watch_zeing_official
+    environment:
+      - IG_USERNAME= zeing_official
+      - IG_PASSWORD= ${IG_PASSWORD}
+  like_zeing_official:
     build:
       context: .
       dockerfile: Dockerfile
     environment:
-      - IG_USERNAME= zeing
+      - IG_USERNAME= zeing_official
       - IG_PASSWORD= ${IG_PASSWORD}
  
