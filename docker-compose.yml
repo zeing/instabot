@@ -8,6 +8,8 @@ services:
     environment:
       - IG_USERNAME= zeing_official
       - IG_PASSWORD= ${IG_PASSWORD}
+    depends_on: 
+      - like_zeing_official
   like_zeing_official:
     container_name: like_zo
     build:
