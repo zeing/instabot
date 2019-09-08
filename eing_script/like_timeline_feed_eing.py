@@ -12,7 +12,7 @@ PROXY = os.getenv('IG_PROXY')
 print("Running with user: %s and password: %s and proxy: %s" % (USERNAME, PASSWORD,PROXY))
 bot = Bot()
 bot.login(username=USERNAME, password=PASSWORD,
-          proxy=PROXY)
+          proxy=PROXY, use_cookie=True)
 
 wait = 15 * 60 # in seconds
 while True:
