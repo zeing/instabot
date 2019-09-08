@@ -3,7 +3,7 @@ services:
   watch_zeing_official:
     build:
       context: .
-      dockerfile: Dockerfile.watch_zeing_official
+      dockerfile: ./eing_script/watch_docker/Dockerfile
     environment:
       - IG_USERNAME= zeing_official
       - IG_PASSWORD= ${IG_PASSWORD}
