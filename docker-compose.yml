@@ -25,5 +25,5 @@ services:
     environment:
       - IG_USERNAME= zeing
       - IG_PASSWORD= ${IG_PASSWORD}
-      - IG_PROXY= 
+      - IG_PROXY= 101.51.141.11:4153
  
