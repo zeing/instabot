@@ -1,6 +1,7 @@
 version: '3'
 services:
   watch_zeing_official:
+    container_name: 'watch_zo'
     build:
       context: .
       dockerfile: ./eing_script/watch_docker/Dockerfile
@@ -8,10 +9,21 @@ services:
       - IG_USERNAME= zeing_official
       - IG_PASSWORD= ${IG_PASSWORD}
   like_zeing_official:
+    container_name: 'like_zo'
     build:
       context: .
       dockerfile: Dockerfile
     environment:
       - IG_USERNAME= zeing_official
       - IG_PASSWORD= ${IG_PASSWORD}
+      - IG_PROXY= 
+  like_zeing:
+    container_name: 'like_z'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - IG_USERNAME= zeing_official
+      - IG_PASSWORD= ${IG_PASSWORD}
+      - IG_PROXY= 118.175.244.111:8080
  
