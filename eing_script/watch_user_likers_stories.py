@@ -25,22 +25,13 @@ print("Running with user: %s and password: %s" % (USERNAME, PASSWORD))
 bot = Bot()
 bot.login(username=USERNAME, password=PASSWORD)
 
-if len(sys.argv) >= 2:
-    bot.logger.info(
-        """
-            Going to get '%s' likers and watch their stories (and stories of their likers too).
-        """
-        % (sys.argv[1])
-    )
-    user_to_get_likers_of = bot.convert_to_user_id(sys.argv[1])
-else:
-    bot.logger.info(
+bot.logger.info(
         """
             Going to get your likers and watch their stories (and stories of their likers too).
             You can specify username of another user to start (by default we use you as a starting point).
         """
     )
-    user_to_get_likers_of = bot.user_id
+user_to_get_likers_of = bot.user_id
 
 current_user_id = user_to_get_likers_of
 while True:
